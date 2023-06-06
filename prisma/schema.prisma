@@ -1,0 +1,22 @@
+generator custom_generator {
+  provider = "node dist/generator"
+  output   = "types"
+}
+datasource db {
+  provider = "mongodb"
+  url      = "..."
+}
+
+///  A Person
+model person {
+  id String @id @map("_id")
+  /// Name of  the Person
+  name name
+}
+
+type name {
+  /// First Name
+  firstname String
+  /// Last Name
+  lastname String
+}
